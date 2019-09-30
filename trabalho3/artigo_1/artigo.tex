@@ -1,0 +1,144 @@
+ % =======================================================================
+% =                                                                     =
+% =======================================================================
+% -----------------------------------------------------------------------
+% - Author:     Chaua Queirolo                                          -
+% - Version:    001                                                     -
+% -----------------------------------------------------------------------
+\documentclass[a4paper,11pt]{article}    
+
+% =======================================================================
+% PACKAGES
+% =======================================================================
+
+% Language support
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{ae,aecompl}
+\usepackage[section]{placeins}
+
+
+
+% Configuration
+\usepackage{url}
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage[svgnames,table]{xcolor}
+\usepackage[margin=2cm,includefoot]{geometry}
+
+% Tabular
+\usepackage{multirow}
+\usepackage{multicol}
+
+% Images
+\usepackage{graphicx}
+\usepackage[scriptsize]{subfigure}
+\usepackage{epstopdf}
+\usepackage{float}% http://ctan.org/pkg/{multicol,lipsum,graphicx,float}
+
+
+% Math
+\usepackage{mdwtab}	% bug rowcolor
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{footnote}
+
+
+\usepackage{enumitem}
+
+% References
+\usepackage[sort,nocompress]{cite}
+
+% =======================================================================
+% VARIABLES
+% =======================================================================
+
+% Space between the lines in a table
+\renewcommand{\arraystretch}{1.3}
+
+% Define a new column type
+\newcolumntype{x}[1]{>{\raggedright\hspace{0pt}}p{#1}}%
+
+% Controle das Margens
+\sloppy
+\tolerance=9999999
+
+% Espaço entre colunas
+\setlength{\columnsep}{.9cm}
+
+
+% Configuration
+\usepackage{lipsum}
+\usepackage{blindtext}
+
+% =======================================================================
+% HEADER
+% =======================================================================
+
+\title{Computação Evolutiva}
+\author{Alan Azevedo Bancks \\ Universidade Tuiuti do Parana \\
+Inteligência Computacional \\E-mail: {\tt dsalan@hotmail.com}}
+\date{18/08/2019}
+
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+    {\endminipage\par\medskip}
+
+% =======================================================================
+% DOCUMENT
+% =======================================================================
+\begin{document}
+
+\maketitle
+
+%\begin{abstract}
+%    \lipsum[1]
+%\end{abstract}
+%\hspace{.5cm}
+
+\begin{multicols}{2}
+\section{Introdução}
+
+A computação evolutiva usa técnicas em seus algoritmos que funcionam de maneira semelhante ao mecanismo biologico 
+da propria evolução proposto por Charles Darwin, onde a sobrevivencia do mais apto tendo caracteristicas
+mais adaptativas é o que lhe garante passar seus genes adiante, e a sua herança dispoem de uma geração mais evoluida
+de maneira gradual com o passar dessas gerações.
+Para que um problema possa ser passivo do uso desse tipo de técnica , ele precisa ser adpatado a esses conceitos biologicos, 
+com isso garantido que a estrutura do algoritmo seja funcional e traga resultados beneficos.\cite{artigo_motion} 
+
+
+%\section{Revisão Bibliografica}
+
+
+
+\section{Aplicações}
+
+As soluções dadas para problemas onde são relevantes essas técnicas podem ser diversas , devido a variabilidade das caracteristicas
+que o problema assume em cada geração;Otimazação é um bom alvo a ser conquistado pois os Algoritmos Genéticos são bons para problemas 
+com muitas variaveis e espaços de soluções elevados. Exemplos: Roteamento de redes, otimização de trajetos , gerenciamento de filas 
+
+
+\section{Métodologias}
+
+
+\subsection{O Algoritmo Genético}
+
+
+Imcorpotando o modelo biologico , uma estrutura é construida como um cromossomo e caracteristicas vitais a solução do problema 
+são mantidadas conforma gerações de evolução vão avançando. Normalmente possuem descrições de entradas formadas de cadeias de bits
+de tamanho fixo , existem 3 tipos de representações possiveis de cromosso , a binaria, inteira e real
+
+
+
+
+
+
+\section{Conclusão}
+
+
+\end{multicols}
+\bibliographystyle{plain}
+\bibliography{referencias}
+
+\end{document}
