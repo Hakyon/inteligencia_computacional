@@ -27,6 +27,7 @@ ITENS_MOCHILA = [
 
 ]
 
+
 class Mochila(object):
 
     def __init__(self):
@@ -58,13 +59,13 @@ class Mochila(object):
             p1 = casal[0][0]
             p2 = casal[1][0]
 
-            # Crossover\n",
+            # Crossover
             corte = randint(1, len(p1) - 1)
 
             f1 = p1[:corte] + p2[corte:]
             f2 = p2[:corte] + p1[corte:]
 
-            # Mutacao\n",
+            # Mutacao
             for i in range(len(f1)):
                 if random() < taxa_mutacao:
                     f1[i] = 0 if f1[i] == 1 else 1
@@ -87,8 +88,7 @@ class Mochila(object):
 
     def start(self):
 
-        # Define a estrategia do fitness
-        # - weights: define se o problema é de maximizacao (+1) ou minimizacao (-1)
+        # define se o problema é de maximizacao (+1) ou minimizacao (-1)
         creator.create("FitnessMax", base.Fitness, weights=(1.0,))
 
         # Define a estrutura do cromossomo

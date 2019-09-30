@@ -17,7 +17,7 @@ class Otimizacao(object):
     def __init__(self):
         pass
 
-    def bit2dec(self, bits):
+    def bit_to_dec(self, bits):
         decval = 0
         for i in range(7):
             decval += bits[i] * (2 ** i)
@@ -25,8 +25,8 @@ class Otimizacao(object):
         return decval
 
     def fitness(self, cromossomo):
-        n1 = self.bit2dec(cromossomo[:7])
-        n2 = self.bit2dec(cromossomo[7:])
+        n1 = self.bit_to_dec(cromossomo[:7])
+        n2 = self.bit_to_dec(cromossomo[7:])
 
         # 50x + 24y ≤ 2400
         # 30x + 33y ≤ 2100
@@ -90,8 +90,8 @@ class Otimizacao(object):
 
         melhor = sorted([(x, x.fitness.values) for x in pop], key=lambda x: x[1], reverse=True)[0][0]
 
-        xVal = self.bit2dec(melhor[:7])
-        yVal = self.bit2dec(melhor[7:])
+        xVal = self.bit_to_dec(melhor[:7])
+        yVal = self.bit_to_dec(melhor[7:])
 
         print(f'x: {xVal} | y: {yVal}')
 

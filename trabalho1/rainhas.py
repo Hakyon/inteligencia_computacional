@@ -1,5 +1,4 @@
 import random
-
 from deap import base
 from deap import creator
 from deap import tools
@@ -39,10 +38,30 @@ class ProblemaRainhas(object):
                 ant = fin
                 fin += 8
 
-        return avalia_tabuleiro(tabuleiro),
+        return self.avalia_tabuleiro(tabuleiro),
+
+    def avalia_tabuleiro(self,tabuleiro):
+        return
 
     def start(self):
-        pass
+        creator.create("FitnessMax", base.Fitness, weights=(-1.0,))
+
+        # Define a estrutura do cromossomo
+        creator.create("Individual", list, fitness=creator.FitnessMax)
+
+        # Define os componentes para configurar a populacao
+        toolbox = base.Toolbox()
+
+        # Gerador para os individuos
+        toolbox.register("attr_bool", random.randint, 0, 1)
+
+        # Inicializador da populacao
+        toolbox.register("individual",
+                         tools.initRepeat,
+                         creator.Individual,
+                         toolbox.attr_bool, TAM_CROMOSSOMO)
+
+        toolbox.register("population", tools.initRepeat, list, toolbox.individual)
 
 
 if __name__ == "__main__":
